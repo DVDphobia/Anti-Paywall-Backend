@@ -32,11 +32,8 @@ router.post('/bypass', async (req, res) => {
         '--disable-gpu',
         '--no-first-run',
         '--no-zygote',
-        '--single-process',
-        '--disable-web-security'
-      ],
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
-      ignoreDefaultArgs: ['--disable-extensions']
+        '--single-process'
+      ]
     });
 
     try {
