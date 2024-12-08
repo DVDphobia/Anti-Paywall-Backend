@@ -33,10 +33,10 @@ router.post('/bypass', async (req, res) => {
         '--no-first-run',
         '--no-zygote',
         '--single-process',
-        '--disable-web-security',
-        '--disable-features=IsolateOrigins,site-per-process'
+        '--disable-web-security'
       ],
-      executablePath: process.env.GOOGLE_CHROME_BIN || null
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
+      ignoreDefaultArgs: ['--disable-extensions']
     });
 
     try {
