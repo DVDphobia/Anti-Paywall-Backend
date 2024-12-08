@@ -28,9 +28,15 @@ router.post('/bypass', async (req, res) => {
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+        '--no-first-run',
+        '--no-zygote',
+        '--single-process',
         '--disable-web-security',
         '--disable-features=IsolateOrigins,site-per-process'
-      ]
+      ],
+      executablePath: process.env.GOOGLE_CHROME_BIN || null
     });
 
     try {
